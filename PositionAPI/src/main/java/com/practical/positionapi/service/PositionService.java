@@ -20,6 +20,13 @@ public class PositionService {
     @Autowired
     PositionDao positionDao;
 
+    /**
+     * Retrieves a list of PositionReturnObject objects based on the provided accountId and positionDate.
+     *
+     * @param  accountId    the ID of the account to retrieve positions for
+     * @param  positionDate the date of the positions to retrieve
+     * @return              a list of PositionReturnObject objects containing position information and associated product information
+     */
     public List<PositionReturnObject> getPositions(String accountId, Date positionDate) {
 
         //findByAccountIdAndPositionDate
@@ -51,6 +58,14 @@ public class PositionService {
         return positionReturnObjects;
 
     }
+
+    /**
+     * Retrieves a ProductReturnObject by querying an external service with the provided cusip and date.
+     *
+     * @param  cusip The cusip of the product to retrieve
+     * @param  date  The date for which the product information is requested
+     * @return       The retrieved ProductReturnObject containing product details
+     */
 
     public ProductReturnObject getProduct(String cusip, Date date) {
 
